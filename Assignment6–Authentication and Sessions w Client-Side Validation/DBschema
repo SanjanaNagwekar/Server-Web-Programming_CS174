@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS UniversityDB;
+
+USE UniversityDB;
+
+CREATE TABLE credentials (
+    name VARCHAR(255),
+    student_id CHAR(9) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (student_id)
+);
+
+CREATE TABLE advisors (
+    fullName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(15),
+    lowerBound TINYINT UNSIGNED NOT NULL,
+    upperBound TINYINT UNSIGNED NOT NULL
+);
+
+INSERT INTO advisors (fullName, email, phone_number, lowerBound, upperBound)
+VALUES
+('William Andreopoulos', 'william.andreopoulos@sjsu.edu', '(408) 924-5085', '00', '10'),
+('Nada Attar', 'nada.attar@sjsu.edu', '(408) 924-5108', '11', '21'),
+('Thomas Austin', 'thomas.austin@sjsu.edu', '(408) 924-7227', '22', '32'),
+('Chris Pollett', 'chris@pollett.org', '(408) 924-5145', '33', '43'),
+('Katerina Potika', 'katerina.potika@sjsu.edu', '(408) 924-5134', '44', '54'),
+('David Taylor', 'david.taylor@sjsu.edu', '(408) 924-5124', '55', '65'),
+('Saptarshi Sengupta', 'saptarshi.sengupta@sjsu.edu', '(408) 924-4808', '66', '76'),
+('Mike Wood', 'mike.wood@sjsu.edu', '(408) 924-3209', '77', '87'),
+('Leonard Wesley', 'leonard.wesley@sjsu.edu', '(408) 924-5287', '88', '99');
